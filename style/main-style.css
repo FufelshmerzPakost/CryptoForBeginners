@@ -1,0 +1,154 @@
+body {
+    background: url(../images/background.svg);
+    background-color: #1f1f1f;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.main-handbook, .vijener-handbook, .route-handbook{
+    display: inline-block;
+    background-color: #5c5c5c;
+    border-radius: 15px;
+    
+}
+
+.main-handbook {
+    padding: 30px 30px;
+    margin: 10% auto;
+}
+
+.vijener-handbook, .route-handbook{
+    margin: 10% auto;
+    max-width: 80%;
+    padding: 30px 50px;
+}
+
+.main-table {
+    max-width: 800px;
+}
+
+#text {
+    text-align: justify;
+    font-family: "Inter";
+    font-size: 25px;
+    color: #aaaaaa;
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+#frame>div {
+    background: none;
+    padding: 0;
+}
+
+h1, h2, h3{
+    font-family: "Inter", sans-serif;
+    color: white;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 200;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: 200;
+}
+
+#button {
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    min-width:42%;
+    padding: 25px;
+    background-color: #f9ec0e;
+    border-radius: 15px;
+    text-decoration: none;  
+    color: #1f1f1f;
+}
+
+#button:hover {
+    background-color: #fff883;
+}
+
+#logo {
+    display: inline-block;
+    width: 30%;
+}
+
+#images {
+    width:100%;
+    border-radius: 15px;
+}
+
+#frame {
+    width: 600px;
+    background:#1f1f1f; 
+    margin: 0 auto; 
+    padding: 10px 10px;
+    border-radius: 15px;
+}
+
+#frame p {
+    color:#aaaaaa;  
+    text-align: center;
+}
+
+#input {
+    width: 500px;
+    text-align: center;
+}
+
+#input-text, #input-key {
+    display: inline-block;
+    width: 500px;
+    height: 50px;   
+    border: none;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+#input-button {
+    background-color: #f9ec0e;
+    border: none;
+    display: inline-block;
+    height: 50px;
+    width: 300px;
+    margin:5px;
+    border-radius: 15px;
+}
+
+#input-button:hover {
+    background-color:#fff883;
+}
+
+#table-back {
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+#table-back>table{
+    border-collapse: collapse;
+    width: 100%;  
+    padding: 10px;
+    table-layout: fixed;
+}
+
+#vijener-table-elem {
+    border: 3px solid #aaaaaa;
+    border-radius: 15px;
+    color: #aaaaaa;
+    font-size: 25px;
+    font-weight:900;
+}
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/main-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Russo+One&display=swap" rel="stylesheet">
+    <title>Шифр маршрутизацией</title>
+</head>
+<body>
+    <header>
+        <img src="../images/logo.png" alt="" style="max-width:100%">
+    </header>
+    <div class="route-handbook">
+        <h1>Шифр перестановки</h1>
+        <h2>Теория</h2>
+        <p id="text">Шифры перестановки - это класс шифров, в котором символы открытого 
+            текста переставляются или перестраиваются в определенном порядке дл
+            я создания зашифрованного текста. Эти шифры работают на основе перестановок
+             символов, то есть изменения порядка следования символов в тексте без изменения самих символов.</p>
+            <img src="../images/rout-logo.png" alt="" style="width: 40%;">
+            
+        <ul id="text">
+            <p style="text-decoration:underline;">Как работает шифр перестановки:</p>
+            <li>1. Выбор ключа шифрования: Для шифра перестановки необходимо выбрать ключ, который определяет порядок, в котором символы будут переставляться или перестраиваться.</li>
+            <br>
+            <li>2. Перестановка символов: Символы открытого текста переставляются в соответствии с ключом шифрования. Это может быть перестановка по строкам, столбцам, стержням или другим правилам, определенным шифром.</li>
+            <br>
+            <li>3. Создание зашифрованного текста: После перестановки символов получается зашифрованный текст, который представляет собой открытый текст, но с измененным порядком символов.</li>
+            <br>
+            <li>4. Расшифровка: Для расшифровки зашифрованного текста необходимо знать ключ шифрования и применить обратную операцию перестановки символов, чтобы восстановить исходный открытый текст.</li>
+        </ul>
+        <div id="frame">
+            
+        </div>
+        <p id="text">В качестве примера для изучения шифра перестановки был выбран шифр маршрутизации. <br>
+        </p>
+        
+        <h2>Практическое шифрование по шагам</h2>
+        <div class="input">
+            <input type="text" id="input-text" placeholder="Введите текст">
+            <br>
+            <input type="text" id="input-key" placeholder="Введите ключ">
+            <br>
+            <button type="button" onclick="" id="input-button">Зашифровать</button>
+        </div>
+        <div id="table"></div>
+    </div>
+</body>
+</html>
