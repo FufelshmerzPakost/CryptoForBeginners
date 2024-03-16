@@ -74,6 +74,10 @@ function vijenerTableReturn() {
     let el7 = document.createElement('p');
     el7.innerText = `Результат ---> ${decryptWord}`
     secondForm.appendChild(el7);
+
+    let lockButton = document.getElementById('input-button');
+    lockButton.disabled = true;
+    lockButton.id = 'input-button-lock';
 }
 function toEncryptForm(elem1, elem2, alph) {
     const divider = alph.length-1;
@@ -85,7 +89,7 @@ function toEncryptForm(elem1, elem2, alph) {
 function toDecryptForm(elem1, elem2, alph) {
     const divider = alph.length-1;
     let modValue;
-    if ((elem1-elem2)%(divider) <= 0) {
+    if ((elem1-elem2)%(divider) < 0) {
         modValue = (elem1-elem2)%(divider) + divider;
     } else {
         modValue = (elem1-elem2)%(divider);

@@ -131,6 +131,18 @@ h3 {
     background-color:#fff883;
 }
 
+#input-button-lock {
+    border: 5px solid #f9ec0e;
+    background-color: #5c5c5c;
+    color: #f9ec0e;
+    font-weight: 900;
+    display: inline-block;
+    height: 50px;
+    width: 300px;
+    margin:5px;
+    border-radius: 15px;
+}
+
 #table-back {
     background-color: #1f1f1f;
     padding: 15px;
