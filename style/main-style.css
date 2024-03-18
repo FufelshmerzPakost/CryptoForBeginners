@@ -1,5 +1,5 @@
 body {
-    background: url(../images/background.svg);
+    background: url(../src/background.svg);
     background-color: #1f1f1f;
     text-align: center;
     margin: 0;
@@ -156,11 +156,14 @@ h3 {
     table-layout: fixed;
 }
 
-#vijener-table-elem {
+#table-elem {
     border: 3px solid #aaaaaa;
     border-radius: 15px;
     color: #aaaaaa;
     font-size: 25px;
     font-weight:900;
+    text-align: center;
 }
+
+
 

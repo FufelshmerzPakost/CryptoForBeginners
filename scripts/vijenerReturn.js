@@ -1,6 +1,6 @@
 
 function vijenerTableReturn() {
-    document.getElementById('table').hidden = false;
+    document.getElementById('hide-answer').hidden = false;
     
     const text = document.getElementById("input-text").value;
     const key = document.getElementById("input-key").value;
@@ -12,7 +12,7 @@ function vijenerTableReturn() {
     let table = document.createElement('table');
    
     back.id = 'table-back';
-    table.id = 'vijener-table';
+    
     
     let rowIndex = table.insertRow();
     let rowAlph = table.insertRow();
@@ -28,7 +28,7 @@ function vijenerTableReturn() {
         let elemIndexKey = rowKeyIndex.insertCell();
         let elemKey = rowKey.insertCell();
         
-        elemAlph.id = elemIndex.id = elemIndexKey.id = elemKey.id = 'vijener-table-elem';
+        elemAlph.id = elemIndex.id = elemIndexKey.id = elemKey.id = 'table-elem';
         
         elemIndex.innerHTML = i;
         elemAlph.innerHTML = crypt.alph[i];
