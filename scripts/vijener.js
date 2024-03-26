@@ -12,8 +12,8 @@ class VijenerEncrypt {
     }
 
     alphabet() {
-        const rusLang = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
-        const engLang = 'abcdefghijklmnopqrstuvwxyz';
+        const rusLang = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя ';
+        const engLang = 'abcdefghijklmnopqrstuvwxyz* ';
         const alphabet = (this.lang == 'rus') ? rusLang : engLang;
         return alphabet;
     }

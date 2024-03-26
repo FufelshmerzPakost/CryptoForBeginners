@@ -1,23 +1,34 @@
-
-function vijenerTableReturn() {
+function combinationReturn() {
     document.getElementById('table').hidden = false;
-    
-    const text = document.getElementById("input-text").value;
-    const key = document.getElementById("input-key").value;
-    const lang = 'rus'; 
-    const crypt = new window.VijenerEncrypt(text, key, lang);
-    const firstForm = document.getElementById('first-table');
-    const secondForm = document.getElementById('math');
-    let back = document.createElement('div');
+    const text = document.getElementById('input-text').value;
+    const key = document.getElementById('input-key').value;
+    const lang = 'eng'; 
+    let routEncrpyt = new window.RoutEncrypt(text);
+    let crypt = new window.VijenerEncrypt(routEncrpyt.encrypt, key, lang);
+    let rout = document.getElementById('first-table');
+    let vijener = document.getElementById('second-table');
     let table = document.createElement('table');
+    let tableBack = document.createElement('div');
+    let back = document.createElement('div');
+    let table2 = document.createElement('table');
    
     back.id = 'table-back';
-    table.id = 'vijener-table';
-    
-    let rowIndex = table.insertRow();
-    let rowAlph = table.insertRow();
-    let rowKeyIndex = table.insertRow();
-    let rowKey = table.insertRow();
+    table2.id = 'vijener-table';
+    tableBack.id = 'table-back';
+
+    for (let row of routEncrpyt.table) {
+        let tr = table.insertRow();
+        for (let i of row) {
+            let td = tr.insertCell();
+            td.id = 'table-elem';
+            td.innerHTML = i;
+        }
+    }
+
+    let rowIndex = table2.insertRow();
+    let rowAlph = table2.insertRow();
+    let rowKeyIndex = table2.insertRow();
+    let rowKey = table2.insertRow();
     
     let textIndex = [];
     let keyIndex = [];
@@ -35,8 +46,8 @@ function vijenerTableReturn() {
         elemIndexKey.innerHTML = crypt.alph.indexOf(crypt.normalKey[i]);
         elemKey.innerHTML = crypt.normalKey[i];
     }
-    back.appendChild(table); 
-    firstForm.appendChild(back);
+    back.appendChild(table2); 
+    vijener.appendChild(back);
 
     let word = '';
     for (let i=0; i<crypt.text.length; i++) {
@@ -46,19 +57,18 @@ function vijenerTableReturn() {
         let textElem = document.createElement('p');
         textElem.innerText = `${form[1]} --> ${crypt.alph[form[0]]}`;
         word += crypt.alph[form[0]];
-        secondForm.appendChild(textElem);
+        vijener.appendChild(textElem);
     }
     let el5 = document.createElement('p');
-    el5.innerText = '5. Получаем ответ.'
-    secondForm.appendChild(el5);
+    el5.innerText = 'Получаем наше зашифрованное сообщение. Для дешифрования проводим операции в обратном порядке:'
+    vijener.appendChild(el5);
+    
+    let el6 = document.createElement('p');
+    
 
     let returnWord = document.createElement('p');
     returnWord.innerText = `Результат ---> ${word}`;
-    secondForm.appendChild(returnWord); 
-
-    let el6 = document.createElement('p');
-    el6.innerText = '6. Для расшифровки нам понадобиться наша комбинация и ключ. Подразумевается что получатель знает перемешанный алфавит. Действия аналогичные, за исключением того, что вместо операции "+" мы используем "-".';
-    secondForm.appendChild(el6);
+    vijener.appendChild(returnWord); 
 
     let decryptWord = '';
     for (let i=0; i<crypt.text.length; i++) {
@@ -68,17 +78,26 @@ function vijenerTableReturn() {
         let textElem = document.createElement('p');
         textElem.innerText = `${form[1]} --> ${crypt.alph[form[0]]}`;
         decryptWord += crypt.alph[form[0]];
-        secondForm.appendChild(textElem);
+        vijener.appendChild(textElem);
     }
 
     let el7 = document.createElement('p');
     el7.innerText = `Результат ---> ${decryptWord}`
-    secondForm.appendChild(el7);
+    vijener.appendChild(el7);
+    
+    tableBack.appendChild(table);
+    rout.appendChild(tableBack);
+    let p = document.createElement('p');
+    p.textContent = `Итоговый шифр ---> ${routEncrpyt.encrypt}`;
+    p.id = 'text';
+    answer.appendChild(p);
+
 
     let lockButton = document.getElementById('input-button');
     lockButton.disabled = true;
     lockButton.id = 'input-button-lock';
 }
+
 function toEncryptForm(elem1, elem2, alph) {
     const divider = alph.length-1;
     const modValue = (elem1+elem2)%(divider);
@@ -88,19 +107,12 @@ function toEncryptForm(elem1, elem2, alph) {
 
 function toDecryptForm(elem1, elem2, alph) {
     const divider = alph.length-1;
-    const val = elem1 - elem2;
-    const result = val % divider;
     let modValue;
-    console.log(result)
-    if (result < 0) {
-        modValue = result + divider;
-    } else if (result < divider){
-        modValue = result;
-    } else if(result = 0){
-        modValue = 0;
-    }
-
+    if ((elem1-elem2)%(divider) <= 0) {
+        modValue = (elem1-elem2)%(divider) + divider;
+    } else {
+        modValue = (elem1-elem2)%(divider);
+    } 
     const modForm = `(${elem1} - ${elem2}) mod ${divider} = ${modValue}`;
     return [modValue, modForm];
 }
-

@@ -14,7 +14,6 @@ function routEncryptReturn() {
         for (let i of row) {
             let td = tr.insertCell();
             td.id = 'table-elem';
-            td.style.textAlign = 'center';
             td.innerHTML = i;
         }
     }
