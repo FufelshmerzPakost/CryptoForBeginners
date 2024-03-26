@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Russo+One&display=swap" rel="stylesheet">
+    <script src="./js/rout.js"></script> 
+    <script src="./js/routReturn.js"></script>
+    <title>Шифр замены</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="./img/logo.png" alt="" style="max-width:80%">
+        </a>
+    </header>
+    <div class="vijener-handbook">
+        <h1>Шифр перестановки</h1>
+        <h2>Теория</h2>
+        <p id="text">. Шифры перестановки - порядок символов в открытом тексте меняется с помощью определенного ключа или правила перестановки. 
+            Новых символов не возникает. Изменяется лишь местоположение символов.
+        </p>
+            
+        <ul id="text">
+            <p style="text-decoration:underline;">Как работает шифр перестановки на примере шифра маршрутизацией:</p>
+            <li>1. Определение ключа или шаблона перестановки символов. В нашем случае - таблица с маршрутом</li>
+            <br>
+            <li>2. Разбиение открытого текста на блоки символов.</li>
+            <br>
+            <li>3. Перестановка символов в каждом блоке в соответствии с ключом или шаблоном.</li>
+            <br>
+            <li>4. Объединение зашифрованных блоков символов для получения зашифрованного текста.</li>
+        </ul>
+        <p id="text">
+            - Принцип работы шифра маршрутной перестановки состоит в том, что символы текста записываются в таблицу с определенным числом строк и столбцов, а затем читаются по строкам или столбцам в зависимости от ключа.
+        </p>
+        <h2>Практическое шифрование по шагам</h2>
+        <div class="input">
+            <input type="text" id="input-text" placeholder="Введите текст">
+            <br>
+            <h3>Ключ-таблица</h3> 
+            <img src="./img/first_rout_orange.png" alt="" style="width: 40%;" id="text">  
+            <br>
+            <button type="button" onclick="routEncryptReturn()" id="input-button">Зашифровать</button>
+        </div>
+        <div id="text" class="hide" hidden>
+            <div id="table">
+                <p id="text">1.Разбиваем текст по частям на таблицу</p>
+            </div>
+            <div id="answer">
+                <p>2.Двигаемся по маршруту и получаем наш итоговый шифр. Ключом к расшифрованию будет таблица с маршрутом</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Russo+One&display=swap" rel="stylesheet">
+    <script src="./js/rout.js"></script> 
+    <script src="./js/vijener.js"></script> 
+    <script src="./js/combinationReturn.js"></script>
+    <title>Комбинированный шифр</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="./img/logo.png" alt="" style="max-width:80%">
+        </a>
+    </header>
+    <div class="vijener-handbook">
+        <h1>Комбинация шифров</h1>
+        <h2>Теория</h2>
+        <div id="text">
+            <p>Шифры применяются в определенном порядке:</p>
+            <p>1.Шифр перестановки. Используем уже известный нам ключ.</p>
+            <p>2. Шифр замены. После смешивания текста применяется шифр виженера со смешанным алфавитом</p>
+        </div>         
+        <h2>Практическое шифрование по шагам</h2>
+        <div class="input">
+            <input type="text" id="input-text" placeholder="Введите текст">
+            <br>
+            <input type="text" id="input-key" placeholder="Введите ключ">
+            <br>
+            <button type="button" onclick="combinationReturn()" id="input-button">Зашифровать</button>
+        </div>
+        <div id="table" hidden>
+            <div id="text">
+                <div id="first-table">
+                    <h3>1. Перестановка маршрутизацией</h3>
+                    <img src="./img/first_rout_orange.png" alt="" style="width: 40%;" id="text">
+                </div>
+                <p id="answer"></p>
+                <div id="second-table">
+                    <h3>2. Шифрование Виженера</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
